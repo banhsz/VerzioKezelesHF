@@ -27,11 +27,16 @@ namespace VerzioKezelesHF
         }
         static void Main(string[] args)
         {
-            //2
-            Console.WriteLine("Írj be 10 számot!");
-            double[] szamok = new double[10];
-            TombFeltoltes(szamok);
-            Console.WriteLine("A beírt számok átlaga: "+TombAtlag(szamok));
+            //3
+            Console.WriteLine("Hány számot szeretnél beírni?");
+            int db = Convert.ToInt32(Console.ReadLine());
+            if (db>0)
+            {
+                Console.WriteLine("Írj be {0} számot!",db);
+                double[] szamok = new double[db];
+                TombFeltoltes(szamok);
+                Console.WriteLine("A beírt számok átlaga: " + TombAtlag(szamok));
+            }
 
 
 
