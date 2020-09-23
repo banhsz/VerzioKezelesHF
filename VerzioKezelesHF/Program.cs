@@ -25,6 +25,30 @@ namespace VerzioKezelesHF
             }
             return szum / tomb_be.Length;
         }
+        public static int TombMin(double[] tomb_be)
+        {
+            int min = 0;
+            for (int i = 1; i < tomb_be.Length; i++)
+            {
+                if (tomb_be[i]<tomb_be[min])
+                {
+                    min = i;
+                }
+            }
+            return min;
+        }
+        public static int TombMax(double[] tomb_be)
+        {
+            int max = 0;
+            for (int i = 1; i < tomb_be.Length; i++)
+            {
+                if (tomb_be[i] > tomb_be[max])
+                {
+                    max = i;
+                }
+            }
+            return max;
+        }
         static void Main(string[] args)
         {
             //3
@@ -36,6 +60,8 @@ namespace VerzioKezelesHF
                 double[] szamok = new double[db];
                 TombFeltoltes(szamok);
                 Console.WriteLine("A beírt számok átlaga: " + TombAtlag(szamok));
+                Console.WriteLine("A legnagyobb elem: {0}\nA Legkisebb: {1}",szamok[TombMax(szamok)],szamok[TombMin(szamok)]);
+
             }
 
 
